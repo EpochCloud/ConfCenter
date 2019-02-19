@@ -1,5 +1,22 @@
 # README
 
+### 使用
+
+```go
+cd $GOPATH
+go get github.com/EpochCloud/ConfCenter
+cd src/github.com/EpochCloud/ConfCenter
+go install
+cd $GOPATH
+mv ConfCenter $GOPATH   //这里如果是windows是ConfCenter.exe
+win环境
+ConfCenter.exe -f ./src/ConfCenter/config/config.toml
+linux/mac环境
+./ConfCenter -f ./src/ConfCenter/config/config.toml
+```
+
+
+
 ### 运行
 
 #### 直接运行
