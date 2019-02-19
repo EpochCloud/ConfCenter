@@ -1,6 +1,21 @@
 # README
 
-### 使用
+```go
+ConfCenter 是一个基于go语言开发微服务配置中心。
+特点：
+轻量级
+基于go语言强大的并发能力毋庸质疑
+跨语言，跨平台
+轻松上云，docker镜像小于三十m
+所有语言都可以轻松使用
+占用内存小
+轻松对远程调用
+...
+```
+
+
+
+### 运行
 
 ```go
 cd $GOPATH
@@ -14,31 +29,6 @@ ConfCenter.exe -f ./src/ConfCenter/config/config.toml
 linux/mac环境
 ./ConfCenter -f ./src/ConfCenter/config/config.toml
 ```
-
-
-
-### 运行
-
-#### 直接运行
-
-```GO
-cd GOPATH/ConfCenter
-go run main.go -f ./config/config.toml
-```
-
-#### 编译运行
-
-```GO
-cd GOPATH
-go build ConfCenter
-
-linux/mac环境下
-./ConfCenter -f ./src/ConfCenter/config/config.toml
-win环境下
-ConfCenter.exe -f ./src/ConfCenter/config/config.toml
-```
-
-
 
 ### 数据库表结构
 
@@ -74,4 +64,28 @@ port :string
 srvname:string //服务名字
 srv  : string //服务配置
 ```
+
+### 使用
+
+#### 接口/service_operation
+
+###### GET
+
+```go
+get请求主要是查看添加的服务的所有的配置的详细信息
+```
+
+###### POST
+
+```go
+post方法用于添加服务的所有的配置
+```
+
+###### patch
+
+```go
+patch方法用于更新服务的配置
+```
+
+
 
