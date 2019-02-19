@@ -44,7 +44,7 @@ ConfCenter.exe -f ./src/ConfCenter/config/config.toml
 
 #### configuration表
 
-```
+```go
 id 
 ip：string ：需要启动的ip
 port：string ：需要启动的端口
@@ -57,10 +57,21 @@ bufpool ： int ：池子容量
 
 #### service表
 
-```
+```go
 id：
 route ： string 
 service ：string
 servicename ：string 服务的名字，这个是唯一的，注意这里是主键
+```
+
+#### allservice表
+
+```go
+id:
+route:string 
+ip   :string
+port :string
+srvname:string //服务名字
+srv  : string //服务配置
 ```
 
