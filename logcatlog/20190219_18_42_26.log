@@ -1,0 +1,19 @@
+[debug  ] mysql config is :root:123456@tcp(localhost:3306)/confcenter
+[debug  ] http run 127.0.0.1:8081
+[debug  ] domain%!(EXTRA string=http://localhost:8080/root)
+[debug  ] method,host%!(EXTRA string=POST, string=http://localhost:8080/root)
+[debug  ] domain%!(EXTRA string=http://localhost:8080/root)
+[debug  ] method,host%!(EXTRA string=POST, string=http://localhost:8080/root)
+[debug  ] domain%!(EXTRA string=http://localhost:8080/root)
+[debug  ] method,host%!(EXTRA string=POST, string=http://localhost:8080/root)
+[debug  ] domain%!(EXTRA string=http://localhost:8080/root)
+[debug  ] method,host%!(EXTRA string=POST, string=http://localhost:8080/root)
+[debug  ] domain%!(EXTRA string=http://localhost:8080/root)
+[debug  ] method,host%!(EXTRA string=POST, string=http://localhost:8080/root)
+[debug  ] successfull about app method POST,host http://localhost:8080/root
+                                                                           [debug  ] successfull about app method POST,host http://localhost:8080/root
+                                                                           [debug  ] successfull about app method POST,host http://localhost:8080/root
+  [warn   ]waiting for the remaining connections to finish...
+[warn   ]gracefully shutdown the http server...
+hod POST,host http://localhost:8080/root
+                                                                           [debug  ] successfull about app method POST,host http://localhost:8080/root

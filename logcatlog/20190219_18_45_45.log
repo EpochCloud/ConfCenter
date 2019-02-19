@@ -1,0 +1,12 @@
+[debug  ] mysql config is :root:123456@tcp(localhost:3306)/confcenter
+[debug  ] http run 127.0.0.1:8081
+[debug  ] domain%!(EXTRA string=http://localhost:8080/root, string=body----------------body---, *bytes.Buffer={
+	"route":"/root",
+	"ip":"localhost",
+	"port":"8080",
+	"srv":"ser:xxx",
+	"srvname": "ab"
+})
+[debug  ] method,host%!(EXTRA string=POST, string=http://localhost:8080/root, string=body---, string=)
+[warn   ]waiting for the remaining connections to finish...
+[warn   ]gracefully shutdown the http server...

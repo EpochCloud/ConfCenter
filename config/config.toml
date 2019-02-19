@@ -1,0 +1,21 @@
+
+#log配置
+[logConf]
+    LogLevel = "debug"
+    LogPath = "D:/project/src/ConfCenter/logcatlog"
+
+#http server 配置
+[httpConf]
+    ReadTimeout = 1
+    WriteTimeout = 1
+    IdleTimeout = 1
+    Addr = "127.0.0.1:8081"
+
+#redis 配置
+[mysqlConf]
+    DriverName = "mysql"
+    Name = "root"
+    PassWord = "123456"
+    Ip = "localhost"
+    Port = "3306"
+    Database = "confcenter"

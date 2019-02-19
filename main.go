@@ -2,15 +2,13 @@ package main
 
 import (
 	"ConfCenter/router"
-	"ConfCenter/config"
+	"flag"
 	"ConfCenter/initialization"
-	_ "github.com/go-sql-driver/mysql"
 )
 
 func main(){
-	variable := config.Variable{}
-	variable.Initialize("debug","D:/project/src/ConfCenter/logcatlog")
-	initialization.Initialize()
-
+	conf := flag.String("f", "./config/config.toml", "config file")
+	flag.Parse()
+	initialization.Initialize(*conf)
 	router.Run()
 }

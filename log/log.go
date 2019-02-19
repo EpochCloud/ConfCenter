@@ -12,22 +12,20 @@ import (
 
 // levels
 const (
-	debugLevel   = 0
-	infoLevel 	 = 1
-	warnLevel 	 = 2
-	errorLevel   = 3
-	fatalLevel   = 4
+	debugLevel = 0
+	infoLevel  = 1
+	warnLevel  = 2
+	errorLevel = 3
+	fatalLevel = 4
 )
 
 const (
-	printDebugLevel   = "[debug  ] "
-	printInfoLevel 	  = "[info   ] "
-	printWarnLevel    = "[warn   ]"
-	printErrorLevel   = "[error  ] "
-	printFatalLevel   = "[fatal  ] "
+	printDebugLevel = "[debug  ] "
+	printInfoLevel  = "[info   ] "
+	printWarnLevel  = "[warn   ]"
+	printErrorLevel = "[error  ] "
+	printFatalLevel = "[fatal  ] "
 )
-
-
 
 type Logger struct {
 	level      int
@@ -165,5 +163,3 @@ func Fatal(format string, a ...interface{}) {
 func Close() {
 	gLogger.Close()
 }
-
-

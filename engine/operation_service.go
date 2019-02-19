@@ -2,34 +2,31 @@ package engine
 
 import (
 	"ConfCenter/basic"
+	"ConfCenter/basic/util"
 	"ConfCenter/config"
 	"encoding/json"
+	"errors"
+	"fmt"
 	"net/http"
 )
 
-/*
-	get：查询
-	post：插入
-	patch：修改
-*/
-
-func OperationService(w http.ResponseWriter, r *http.Request) {
+func Operation(w http.ResponseWriter, r *http.Request) {
 	switch {
-	case r.Method == http.MethodPost:
-		err, b := insertService(w, r)
-		if err != nil || !b {
+	case r.Method == http.MethodGet:
+		err := getSrv(w, r)
+		if err != nil {
 			return
 		}
 		return
-	case r.Method == http.MethodGet:
-		err := GetService(w, r)
+	case r.Method == http.MethodPost:
+		err := insertSrv(w, r)
 		if err != nil {
 			return
 		}
 		return
 	case r.Method == http.MethodPatch:
-		err, b := PatchService(w, r)
-		if err != nil || !b {
+		err := patch(w, r)
+		if err != nil {
 			return
 		}
 		return
@@ -37,47 +34,48 @@ func OperationService(w http.ResponseWriter, r *http.Request) {
 		errResult.SendErrorResponse(w, config.ErrorMethodFailed)
 		return
 	}
-
 }
 
-//这里注意，服务名字是唯一的
-func insertService(w http.ResponseWriter, r *http.Request) (error, bool) {
+func insertSrv(w http.ResponseWriter, r *http.Request) error {
 	body := basic.GetBody(w, r)
 	defer func() {
 		basic.Clean(w, r, body)
 	}()
-	err := json.Unmarshal(body.Bytes(), service)
+	err := json.Unmarshal(body.Bytes(), allService)
 	switch {
 	case err != nil:
 		config.Log.Info("post json Unmarshal err", err)
 		errResult.SendErrorResponse(w, config.ErrorJsonFailed)
-		return err, false
-		//这里要查询servicename在数据库中有没有
-	case !service.GetService():
-		config.Log.Info("the service name is  existed", service.ServiceName)
+		return err
+	case !allService.GetAllSrv():
+		config.Log.Info("the service name is  existed", allService.SrvName)
 		errResult.SendErrorResponse(w, config.ErrorRepeat)
-		return nil, false
+		errs := fmt.Sprintf("the service name is : %s existed ", allService.SrvName)
+		return errors.New(errs)
 	default:
-		err := service.InsertService()
+		err := allService.InsertSrv()
 		if err != nil {
 			config.Log.Error("insert opration err ", err)
 			errResult.SendErrorResponse(w, config.DbError)
-			return err, false
+			return err
 		}
+		domain := fmt.Sprintf("%s%s:%s%s", scheme, allService.Ip, allService.Port, allService.Route)
+
+		go util.App("POST", domain, allService)
 		result.Response(w)
-		return nil, true
+		return nil
 	}
 }
 
-func GetService(w http.ResponseWriter, r *http.Request) error {
-	err, s := service.GetAllService()
+func getSrv(w http.ResponseWriter, r *http.Request) error {
+	err, srv := allService.GetSrv()
 	if err != nil {
 		config.Log.Error("insert opration err ", err)
 		errResult.SendErrorResponse(w, config.DbError)
 		return err
 	}
 	res := make(map[string]interface{}, 1)
-	res["result"] = s
+	res["result"] = srv
 
 	massage, err := json.Marshal(res)
 	if err != nil {
@@ -91,30 +89,29 @@ func GetService(w http.ResponseWriter, r *http.Request) error {
 	return nil
 }
 
-func PatchService(w http.ResponseWriter, r *http.Request) (error, bool) {
+func patch(w http.ResponseWriter, r *http.Request) error {
 	body := basic.GetBody(w, r)
 	defer func() {
 		basic.Clean(w, r, body)
 	}()
-	err := json.Unmarshal(body.Bytes(), service)
+	err := json.Unmarshal(body.Bytes(), allService)
 	switch {
 	case err != nil:
 		config.Log.Info("post json Unmarshal err", err)
 		errResult.SendErrorResponse(w, config.ErrorJsonFailed)
-		return err, false
-	case !service.GetService():
-		config.Log.Info("the service name is  existed", service.ServiceName)
-		errResult.SendErrorResponse(w, config.ErrorRepeat)
-		return nil, false
 	default:
-		err := service.UpdateService()
+		err := allService.PatchSrv()
 		if err != nil {
 			errResult.SendErrorResponse(w, config.OperationDbErr)
-			return err, false
+			return err
 		}
 		normalResult.Resp = "更新成功"
 		normalResult.Code = 200
 		result.NormalResponse(w, normalResult)
-		return nil, true
+		domain := fmt.Sprintf("%s%s:%s%s", scheme, allService.Ip, allService.Port, allService.Route)
+		config.Log.Debug("domain", domain, "body----------------body---", body)
+		go util.App("POST", domain, allService)
+		return nil
 	}
+	return nil
 }
