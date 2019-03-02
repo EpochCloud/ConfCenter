@@ -27,16 +27,16 @@ func Run() {
 	signal.Notify(exit, syscall.SIGINT, syscall.SIGTERM)
 	go shutdown(exit, wg, srv)
 	log.Debug(config.Conf.HttpConf.Addr)
-	config.Log.Debug("http run %v", config.Conf.HttpConf.Addr)
+	config.Log.Debug("[%v] http run %v",time.Now(), config.Conf.HttpConf.Addr)
 	err := srv.ListenAndServe()
 	if err != nil && err != http.ErrServerClosed {
 		panic(err)
 	}
 	log.Warn("waiting for the remaining connections to finish...")
-	config.Log.Warn("waiting for the remaining connections to finish...")
+	config.Log.Warn("[%v] waiting for the remaining connections to finish...",time.Now())
 	wg.Wait()
 	close(exit)
-	config.Log.Warn("gracefully shutdown the http server...")
+	config.Log.Warn("[%v] gracefully shutdown the http server...",time.Now())
 	log.Warn("gracefully shutdown the http server...")
 }
 
@@ -50,7 +50,7 @@ func shutdown(exit chan os.Signal, wg *sync.WaitGroup, srv *http.Server) {
 	}()
 	err := srv.Shutdown(ctx)
 	if err != nil {
-		config.Log.Error("http shutdown err", err)
+		config.Log.Error("[%v] http shutdown err",time.Now(), err)
 		return
 	}
 }

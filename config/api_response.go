@@ -140,6 +140,14 @@ var (
 			ErrorCode: "017",
 		},
 	}
+
+	ErrorSrvName = ErrorResult{
+		HttpCode: 403,
+		Error: Err{
+			Error:     "confCenter no this servicename",
+			ErrorCode: "018",
+		},
+	}
 )
 
 type Err struct {

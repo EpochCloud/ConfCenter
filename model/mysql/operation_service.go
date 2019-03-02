@@ -3,6 +3,7 @@ package mysql
 import (
 	"ConfCenter/config"
 	"encoding/json"
+	"time"
 )
 
 /*
@@ -35,6 +36,8 @@ type Service struct {
 	RegisterTime string `json:"registertime"` //注册时间
 	//AltTime      string   `json:"alttime"`      //修改时间  这里的名字是登录的名字，不能让人填写，这里先空着，等登录注册完成之后再说补充
 	AltReason string `json:"altreason"` //修改原因
+	ServiceName string   `json:"servicename"`
+	Balance    string   `json:"Balance"`
 }
 
 func NewService() *Operation {
@@ -48,10 +51,10 @@ func NewService() *Operation {
 func (service *Operation) InsertService() error {
 	s, err := json.Marshal(service.Service)
 	if err != nil {
-		config.Log.Error("insert db err", err)
+		config.Log.Error("[%v] insert db err",time.Now(), err)
 		return err
 	}
-	config.Log.Debug("insert service.service", string(s))
+	config.Log.Debug("[%v] insert service.service",time.Now(), string(s))
 	_, err = config.Db.Exec("insert into service(route,service,servicename) values(?,?,?)", service.Route, string(s), service.ServiceName)
 	if err != nil {
 		return err
@@ -63,7 +66,7 @@ func (service *Operation) GetService() bool {
 	s := make([]*Operations, 0)
 	err := config.Db.Select(&s, "select * from service where servicename=?", service.ServiceName)
 	if err != nil {
-		config.Log.Error("get service name err", err)
+		config.Log.Error("[%v] get service name err",time.Now(), err)
 		return false
 	}
 	if len(s) == 0 {
@@ -76,7 +79,7 @@ func (service *Operation) GetAllService() (error, []*Operations) {
 	s := make([]*Operations, 0, 10)
 	err := config.Db.Select(&s, "select * from service")
 	if err != nil {
-		config.Log.Error("get service name err", err)
+		config.Log.Error("[%v] get service name err",time.Now(), err)
 		return err, nil
 	}
 	return nil, s
@@ -85,12 +88,20 @@ func (service *Operation) GetAllService() (error, []*Operations) {
 func (service *Operation) UpdateService() error {
 	s, err := json.Marshal(service.Service)
 	if err != nil {
-		config.Log.Error("insert db err", err)
+		config.Log.Error("[%v] insert db err",time.Now(), err)
 		return err
 	}
-	_, err = config.Db.Exec("update service set router=?,service=? where servicename=?", service.Route, string(s), service.ServiceName)
+	_, err = config.Db.Exec("update service set route=?,service=? where servicename=?", service.Route, string(s), service.ServiceName)
 	if err != nil {
-		config.Log.Error("update service err", err)
+		config.Log.Error("[%v] update service err",time.Now(), err)
+		return err
+	}
+	return nil
+}
+
+func (service *Operation)DeleteService()error{
+	_,err := config.Db.Exec("delete from service where servicename=?",service.ServiceName)
+	if err != nil {
 		return err
 	}
 	return nil

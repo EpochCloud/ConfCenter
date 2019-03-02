@@ -1,0 +1,9 @@
+[debug  ] [2019-03-02 17:38:12.7607657 +0800 CST m=+0.014010301] mysql config is :root:123456@tcp(localhost:3306)/confcenter
+[debug  ] [2019-03-02 17:38:12.7662708 +0800 CST m=+0.019515301] http run 127.0.0.1:8081
+[debug  ] [2019-03-02 17:39:48.4080246 +0800 CST m=+95.661269201] insert service.service%!(EXTRA string={"serviceaddr":["127.0.0.1:6066"],"registertime":"2019.2.22","altreason":"xx","servicename":"","Balance":"random"})
+[debug  ] [2019-03-02 17:39:48.4145277 +0800 CST m=+95.667772201] the gatewaymanager is  &{28 127.0.0.1 8090 15 debug D:/project/src/quick/logcatlog 0 0 127.0.0.1 6060  /manager /service}
+[debug  ] [2019-03-02 17:39:48.4150285 +0800 CST m=+95.668273101] the service is &{0 / 0xc0000de0c0 aa}
+[debug  ] [2019-03-02 17:39:48.4150285 +0800 CST m=+95.668273101] method,host%!(EXTRA string=POST, string=http://127.0.0.1:6060/service, string=body---, string={"id":0,"route":"/","service":{"serviceaddr":["127.0.0.1:6066"],"registertime":"2019.2.22","altreason":"xx","servicename":"","Balance":"random"},"servicename":"aa"})
+[debug  ] [2019-03-02 17:39:48.4165295 +0800 CST m=+95.669774101] successfull about app method POST,host http://127.0.0.1:6060/service
+[warn   ][2019-03-02 17:40:47.7404502 +0800 CST m=+154.993694801] waiting for the remaining connections to finish...
+[warn   ][2019-03-02 17:40:47.7409515 +0800 CST m=+154.994196101] gracefully shutdown the http server...

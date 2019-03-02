@@ -1,6 +1,9 @@
 package mysql
 
-import "ConfCenter/config"
+import (
+	"ConfCenter/config"
+	"time"
+)
 
 type AllService struct {
 	Id      uint64 `json:"id"`      //id
@@ -33,13 +36,13 @@ func (s *AllService) InsertSrv() error {
 
 func (s *AllService) GetAllSrv() bool {
 	srv := make([]AllService, 0)
-	config.Log.Debug("this is srv name", s.SrvName)
+	config.Log.Debug("[%v] this is srv name",time.Now(), s.SrvName)
 	err := config.Db.Select(&srv, "select * from allservice where srvname=?", s.SrvName)
 	if err != nil {
-		config.Log.Error("get service name err", err)
+		config.Log.Error("[%v] get service name err",time.Now(), err)
 		return false
 	}
-	config.Log.Debug("this is srv", srv)
+	config.Log.Debug("[%v] this is srv",time.Now(), srv)
 	if len(srv) == 0 {
 		return true
 	}
@@ -52,4 +55,21 @@ func (s *AllService) PatchSrv() error {
 		return err
 	}
 	return nil
+}
+
+func (s *AllService)DeleteSrv()error{
+	_,err := config.Db.Exec("delete from allservice where srvname=?",s.SrvName)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+
+func (s *AllService) GetOneSrv() (err error, srv []*AllService) {
+	err = config.Db.Select(&srv, "select * from allservice where srvname=?",s.SrvName)
+	if err != nil {
+		return
+	}
+	return
 }

@@ -1,0 +1,42 @@
+[debug  ] [2019-03-02 17:40:49.5179832 +0800 CST m=+0.013999601] mysql config is :root:123456@tcp(localhost:3306)/confcenter
+[debug  ] [2019-03-02 17:40:49.5244879 +0800 CST m=+0.020504401] http run 127.0.0.1:8081
+[info   ] [2019-03-02 17:42:15.7271637 +0800 CST m=+86.223180101] the service name is  existed%!(EXTRA string=aa)
+[info   ] [2019-03-02 17:42:57.7991224 +0800 CST m=+128.295138801] the service name is  existed%!(EXTRA string=aa)
+[info   ] [2019-03-02 17:43:06.3466145 +0800 CST m=+136.842631001] the service name is  existed%!(EXTRA string=aa)
+[debug  ] [2019-03-02 17:43:57.8168363 +0800 CST m=+188.312852701] insert service.service%!(EXTRA string={"serviceaddr":["127.0.0.1:6066"],"registertime":"2019.2.22","altreason":"xx","servicename":"","Balance":"random"})
+[debug  ] [2019-03-02 17:43:57.8243415 +0800 CST m=+188.320358001] the gatewaymanager is  &{28 127.0.0.1 8090 15 debug D:/project/src/quick/logcatlog 0 0 127.0.0.1 6060  /manager /service}
+[debug  ] [2019-03-02 17:43:57.8243415 +0800 CST m=+188.320358001] the service is &{0 / 0xc0000de0c0 liantiao}
+[debug  ] [2019-03-02 17:43:57.8243415 +0800 CST m=+188.320358001] method,host%!(EXTRA string=POST, string=http://127.0.0.1:6060/service, string=body---, string={"id":0,"route":"/","service":{"serviceaddr":["127.0.0.1:6066"],"registertime":"2019.2.22","altreason":"xx","servicename":"","Balance":"random"},"servicename":"liantiao"})
+[debug  ] [2019-03-02 17:43:57.8258428 +0800 CST m=+188.321859301] successfull about app method POST,host http://127.0.0.1:6060/service
+[debug  ] [2019-03-02 17:46:53.5924733 +0800 CST m=+364.088489801] the gatewaymanager is  &{28 127.0.0.1 8090 15 debug D:/project/src/quick/logcatlog 0 0 127.0.0.1 6060  /manager /service}
+[debug  ] [2019-03-02 17:46:53.5924733 +0800 CST m=+364.088489801] the service is &{0 / 0xc0000de0c0 liantiao}
+[debug  ] [2019-03-02 17:46:53.5924733 +0800 CST m=+364.088489801] method,host%!(EXTRA string=PATCH, string=http://127.0.0.1:6060/service, string=body---, string={"id":0,"route":"/","service":{"serviceaddr":["127.0.0.1:6066"],"registertime":"2019.2.22","altreason":"patch test","servicename":"","Balance":"random"},"servicename":"liantiao"})
+[debug  ] [2019-03-02 17:46:53.5934562 +0800 CST m=+364.089472601] successfull about app method PATCH,host http://127.0.0.1:6060/service
+[debug  ] [2019-03-02 17:47:33.3450598 +0800 CST m=+403.841076201] the gatewaymanager is  &{28 127.0.0.1 8090 15 debug D:/project/src/quick/logcatlog 0 0 127.0.0.1 6060  /manager /service}
+[debug  ] [2019-03-02 17:47:33.3450598 +0800 CST m=+403.841076201] the service is &{0 / 0xc0000de0c0 liantiao}
+[debug  ] [2019-03-02 17:47:33.3450598 +0800 CST m=+403.841076201] method,host%!(EXTRA string=PATCH, string=http://127.0.0.1:6060/service, string=body---, string={"id":0,"route":"/","service":{"serviceaddr":["127.0.0.1:6067"],"registertime":"2019.2.22","altreason":"patch test","servicename":"","Balance":"random"},"servicename":"liantiao"})
+[debug  ] [2019-03-02 17:47:33.3460619 +0800 CST m=+403.842078401] successfull about app method PATCH,host http://127.0.0.1:6060/service
+[debug  ] [2019-03-02 17:49:31.4452814 +0800 CST m=+521.941297801] the gatewaymanager is  &{28 127.0.0.1 8090 15 debug D:/project/src/quick/logcatlog 0 0 127.0.0.1 6060  /manager /service}
+[debug  ] [2019-03-02 17:49:31.4452814 +0800 CST m=+521.941297801] the service is &{0 / 0xc0000de0c0 liantiao}
+[debug  ] [2019-03-02 17:49:31.4452814 +0800 CST m=+521.941297801] method,host%!(EXTRA string=PATCH, string=http://127.0.0.1:6060/service, string=body---, string={"id":0,"route":"/","service":{"serviceaddr":["127.0.0.1:6067"],"registertime":"2019.2.22","altreason":"patch test","servicename":"","Balance":"random"},"servicename":"liantiao"})
+[debug  ] [2019-03-02 17:49:31.4462839 +0800 CST m=+521.942300401] successfull about app method PATCH,host http://127.0.0.1:6060/service
+[info   ] [2019-03-02 17:49:45.024221 +0800 CST m=+535.520237501] the service name is  existed%!(EXTRA string=liantiao)
+[info   ] [2019-03-02 17:50:02.1437901 +0800 CST m=+552.639806601] the service name is  existed%!(EXTRA string=liantiao)
+[debug  ] [2019-03-02 17:50:16.0750833 +0800 CST m=+566.571099801] insert service.service%!(EXTRA string={"serviceaddr":["127.0.0.1:6067"],"registertime":"2019.2.22","altreason":"patch test","servicename":"","Balance":"random"})
+[debug  ] [2019-03-02 17:50:16.081088 +0800 CST m=+566.577104501] the gatewaymanager is  &{28 127.0.0.1 8090 15 debug D:/project/src/quick/logcatlog 0 0 127.0.0.1 6060  /manager /service}
+[debug  ] [2019-03-02 17:50:16.081088 +0800 CST m=+566.577104501] the service is &{0 / 0xc0000de0c0 liantiao1}
+[debug  ] [2019-03-02 17:50:16.081088 +0800 CST m=+566.577104501] method,host%!(EXTRA string=POST, string=http://127.0.0.1:6060/service, string=body---, string={"id":0,"route":"/","service":{"serviceaddr":["127.0.0.1:6067"],"registertime":"2019.2.22","altreason":"patch test","servicename":"","Balance":"random"},"servicename":"liantiao1"})
+[debug  ] [2019-03-02 17:50:16.0815889 +0800 CST m=+566.577605301] successfull about app method POST,host http://127.0.0.1:6060/service
+[debug  ] [2019-03-02 17:52:35.0176087 +0800 CST m=+705.513625201] the gatewaymanager is  &{28 127.0.0.1 8090 15 debug D:/project/src/quick/logcatlog 0 0 127.0.0.1 6060  /manager /service}
+[debug  ] [2019-03-02 17:52:35.0176087 +0800 CST m=+705.513625201] the service is &{0 / 0xc0000de0c0 liantiao1}
+[debug  ] [2019-03-02 17:52:35.0176087 +0800 CST m=+705.513625201] method,host%!(EXTRA string=DELETE, string=http://127.0.0.1:6060/service, string=body---, string={"id":0,"route":"/","service":{"serviceaddr":["127.0.0.1:6067"],"registertime":"2019.2.22","altreason":"patch test","servicename":"","Balance":"random"},"servicename":"liantiao1"})
+[debug  ] [2019-03-02 17:52:35.0186097 +0800 CST m=+705.514626101] successfull about app method DELETE,host http://127.0.0.1:6060/service
+[debug  ] [2019-03-02 17:53:15.6753977 +0800 CST m=+746.171414201] insert service.service%!(EXTRA string={"serviceaddr":["127.0.0.1:6067"],"registertime":"2019.2.22","altreason":"patch test","servicename":"","Balance":"random"})
+[debug  ] [2019-03-02 17:53:15.6824025 +0800 CST m=+746.178419001] the gatewaymanager is  &{28 127.0.0.1 8090 15 debug D:/project/src/quick/logcatlog 0 0 127.0.0.1 6060  /manager /service}
+[debug  ] [2019-03-02 17:53:15.6824025 +0800 CST m=+746.178419001] the service is &{0 / 0xc0000de0c0 liantiao1}
+[debug  ] [2019-03-02 17:53:15.6824025 +0800 CST m=+746.178419001] method,host%!(EXTRA string=POST, string=http://127.0.0.1:6060/service, string=body---, string={"id":0,"route":"/","service":{"serviceaddr":["127.0.0.1:6067"],"registertime":"2019.2.22","altreason":"patch test","servicename":"","Balance":"random"},"servicename":"liantiao1"})
+[debug  ] [2019-03-02 17:53:15.683405 +0800 CST m=+746.179421501] successfull about app method POST,host http://127.0.0.1:6060/service
+[debug  ] [2019-03-02 17:54:14.0142607 +0800 CST m=+804.510277201] the gatewaymanager is  &{28 127.0.0.1 8090 15 debug D:/project/src/quick/logcatlog 0 0 127.0.0.1 6060  /manager /service}
+[debug  ] [2019-03-02 17:54:14.0142607 +0800 CST m=+804.510277201] the service is &{0 / 0xc0000de0c0 liantiao1}
+[debug  ] [2019-03-02 17:54:14.0142607 +0800 CST m=+804.510277201] method,host%!(EXTRA string=PATCH, string=http://127.0.0.1:6060/service, string=body---, string={"id":0,"route":"/","service":{"serviceaddr":["127.0.0.1:6066"],"registertime":"2019.2.22","altreason":"patch test","servicename":"","Balance":"random"},"servicename":"liantiao1"})
+[debug  ] [2019-03-02 17:54:14.0152518 +0800 CST m=+804.511268301] successfull about app method PATCH,host http://127.0.0.1:6060/service

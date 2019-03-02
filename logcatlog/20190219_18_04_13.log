@@ -1,6 +1,0 @@
-[debug  ] mysql config is :root:123456@tcp(localhost:3306)/confcenter
-[debug  ] http run 127.0.0.1:8081
-[debug  ] domain%!(EXTRA string=http://www.baidu.com:8081/root)
-[error  ] http.request host err%!(EXTRA *url.Error=parse  http://localhost:8080/: first path segment in URL cannot contain colon)
-[warn   ]waiting for the remaining connections to finish...
-[warn   ]gracefully shutdown the http server...

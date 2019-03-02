@@ -11,7 +11,7 @@
     IdleTimeout = 1
     Addr = "127.0.0.1:8081"
 
-#redis 配置
+#mysql 配置
 [mysqlConf]
     DriverName = "mysql"
     Name = "root"

@@ -11,6 +11,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"sync"
+	"time"
 )
 
 type Initialization struct {
@@ -33,7 +34,7 @@ func newInitialization() *Initialization {
 
 func (initialization *Initialization) initDb() *Initialization {
 	dataSourceName := fmt.Sprintf("%s:%s@tcp(%v:%v)/%v", initialization.Config.MysqlConf.Name, initialization.Config.MysqlConf.PassWord, initialization.Config.MysqlConf.Ip, initialization.Config.MysqlConf.Port, initialization.Config.MysqlConf.Database)
-	config.Log.Debug("mysql config is :%v", dataSourceName)
+	config.Log.Debug("[%v] mysql config is :%v",time.Now(), dataSourceName)
 	db, err := sqlx.Open(initialization.Config.MysqlConf.DriverName, dataSourceName)
 	if err != nil {
 		log.Error("open mysql err", err)

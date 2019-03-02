@@ -1,77 +1,45 @@
 # README
 
-### 使用
+## 自述
 
 ```go
-cd $GOPATH
-go get github.com/EpochCloud/ConfCenter
-cd src/github.com/EpochCloud/ConfCenter
-go install
-cd $GOPATH
-mv ConfCenter $GOPATH   //这里如果是windows是ConfCenter.exe
-win环境
-ConfCenter.exe -f ./src/ConfCenter/config/config.toml
-linux/mac环境
-./ConfCenter -f ./src/ConfCenter/config/config.toml
+ConfCenter是一个基于go语言开发微服务配置中心。
+特点：
+服务注册，服务发现
+实现推拉两种功能。容错率低
+轻量级
+强大的并发能力
+跨语言，跨平台
+静态编译，轻松上云
+所有语言都可以轻松使用
+占用内存小
+...
 ```
 
 
 
-### 运行
-
-#### 直接运行
+## 运行
 
 ```GO
-cd GOPATH/ConfCenter
+cd $ GOPATH
+ 去获取github。com / EpochCloud / ConfCenter
+cd src / github。COM / EpochCloud / ConfCenter
+ 去安装
+cd $ GOPATH
+mv ConfCenter $ GOPATH    //这里如果是windows是ConfCenter.exe
+赢环境
+ConfCenter。exe -f ./src/ConfCenter/config/config。toml
+Linux的/ MAC环境
+./ConfCenter -f ./src/ConfCenter/config/config。tomlcd GOPATH/ConfCenter
 go run main.go -f ./config/config.toml
 ```
 
-#### 编译运行
-
-```GO
-cd GOPATH
-go build ConfCenter
-
-linux/mac环境下
-./ConfCenter -f ./src/ConfCenter/config/config.toml
-win环境下
-ConfCenter.exe -f ./src/ConfCenter/config/config.toml
-```
-
-
-
-### 数据库表结构
-
-#### configuration表
+## 数据库表结构
 
 ```
-id 
-ip：string ：需要启动的ip
-port：string ：需要启动的端口
-timeout ： int ：api控制的超时时间
-loglevel ： string ：日志的级别
-logpath ： string ：日志的打印路径
-modification ： uint64 ：是否被覆盖，如果被覆盖是1，没有覆盖是0
-bufpool ： int ：池子容量
+数据库的名字以及ip、端口、名字、密码都在toml配置文件中，如果使用本开源软件，请注意修改
+表结构详情：在sql包中
 ```
-
-#### service表
-
-```
-id：
-route ： string 
-service ：string
-servicename ：string 服务的名字，这个是唯一的，注意这里是主键
-```
-
-allservice表
-
-    id:
-    route:string 
-    ip   :string
-    port :string
-    srvname:string //服务名字
-    srv  : string //服务配置
 
 
 
