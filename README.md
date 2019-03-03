@@ -22,7 +22,7 @@ ConfCenter是一个基于go语言开发微服务配置中心。
 
 ```GO
 cd $ GOPATH
- 去获取github。com / EpochCloud / ConfCenter
+go get github。com / EpochCloud / ConfCenter
 cd src / github。COM / EpochCloud / ConfCenter
  去安装
 cd $ GOPATH
