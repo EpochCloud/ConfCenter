@@ -25,11 +25,16 @@ cd $ GOPATH
 go get github.com/EpochCloud/ConfCenter
 go get github.com/jmoiron/sqlx
 go install github.com/EpochCloud/ConfCenter
-cd src/github.com/EpochCloud/ConfCenter
 
 win环境
+cd bin
+move ConfCenter.exe ../src/github.com/EpochCloud/ConfCenter
+cd ../src/github.com/EpochCloud/ConfCenter
 ConfCenter.exe -f ./config/config.toml
 Linux/ MAC环境
+cd bin
+mv ConfCenter ../src/github.com/EpochCloud/ConfCenter
+cd ../src/github.com/EpochCloud/ConfCenter
 ./ConfCenter -f ./config/config.toml
 ```
 
