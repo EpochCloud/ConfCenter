@@ -27,7 +27,7 @@ cd src / github。COM / EpochCloud / ConfCenter
  去安装
 cd $ GOPATH
 mv ConfCenter $ GOPATH    //这里如果是windows是ConfCenter.exe
-赢环境
+win环境
 ConfCenter。exe -f ./src/ConfCenter/config/config。toml
 Linux的/ MAC环境
 ./ConfCenter -f ./src/ConfCenter/config/config。tomlcd GOPATH/ConfCenter
