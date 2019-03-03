@@ -23,6 +23,7 @@ ConfCenter是一个基于go语言开发微服务配置中心。
 ```GO
 cd $ GOPATH
 go get github.com/EpochCloud/ConfCenter
+go get github.com/jmoiron/sqlx
 go install github.com/EpochCloud/ConfCenter
 cd src/github.com/EpochCloud/ConfCenter
 
