@@ -22,15 +22,16 @@ ConfCenter是一个基于go语言开发微服务配置中心。
 
 ```GO
 cd $ GOPATH
-go get github。com / EpochCloud / ConfCenter
-cd src / github。COM / EpochCloud / ConfCenter
+go get github。com/EpochCloud/ConfCenter
+cd src / github.com/EpochCloud/ConfCenter
  去安装
 cd $ GOPATH
 mv ConfCenter $ GOPATH    //这里如果是windows是ConfCenter.exe
 win环境
-ConfCenter。exe -f ./src/ConfCenter/config/config。toml
+ConfCenter。exe -f ./src/ConfCenter/config/config.toml
 Linux的/ MAC环境
-./ConfCenter -f ./src/ConfCenter/config/config。tomlcd GOPATH/ConfCenter
+./ConfCenter -f ./src/ConfCenter/config/config.toml
+cd GOPATH/ConfCenter
 go run main.go -f ./config/config.toml
 ```
 
