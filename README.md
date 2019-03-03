@@ -38,7 +38,7 @@ go run main.go -f ./config/config.toml
 
 ```
 数据库的名字以及ip、端口、名字、密码都在toml配置文件中，如果使用本开源软件，请注意修改
-表结构详情：在sql包中
+表结构详情：在sql包中，如果想要测试，那么直接让sql文件导入navicat即可
 ```
 
 
